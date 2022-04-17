@@ -1,4 +1,4 @@
-import { PaletteMode } from '@mui/material'
+import { PaletteMode } from "@mui/material";
 
 /**
  * NOTE: We cannot import or require ANYTHING in this file!
@@ -7,8 +7,8 @@ import { PaletteMode } from '@mui/material'
  * It must also have the '*.mjs' extension
  */
 
-const SPACING_BASE = 8
-const MAX_CONTAINER_WIDTH = 1200
+const SPACING_BASE = 8;
+const MAX_CONTAINER_WIDTH = 1200;
 
 // https://uxplanet.org/responsive-design-best-practices-c6d3f5fd163b
 const BREAKPOINTS = {
@@ -19,88 +19,112 @@ const BREAKPOINTS = {
     lg: 1080,
     xl: 1366,
   },
-}
+};
 
-const PALETTE = {
+const PALETTE: {
+  [key: string]: any;
+} = {
   common: {
-    black: '#000',
-    white: '#fff',
+    black: "#000",
+    white: "#fff",
   },
   primary: {
-    main: '#008BCC',
-    dark: '#00699a',
-    light: '#339cd4',
-    contrastText: '#fff',
+    main: "#008BCC",
+    dark: "#006391",
+    light: "#54B1DD",
+    contrastText: "#fff",
+    containedHover: "#003A56",
+    outlinedHover: "#E6F3FA",
+    outlinedResting: "#B0DBEF",
   },
   secondary: {
-    dark: '#96377a',
-    main: '#af4c92',
-    light: '#bf70a8',
-    contrastText: '#fff',
+    dark: "#622443",
+    main: "#8A325F",
+    light: "#B17694",
+    contrastText: "#fff",
+    containedHover: "#3A1528",
+    outlinedHover: "#F3EBEF",
+    outlinedResting: "#DBBFCD",
   },
   error: {
-    dark: '#bf253b',
-    main: '#ee314c',
-    light: '#f15a70',
-    contrastText: '#fff',
+    dark: "#E31B0C",
+    main: "#F44336",
+    light: "#F88078",
+    contrastText: "#fff",
+    containedHover:
+      " linear-gradient(0deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), #F44336",
+    outlinedHover: "#F4433614",
+    outlinedResting: "#F4433680",
   },
   warning: {
-    main: '#ff7c24',
-    light: '#ff9650',
-    dark: '#ec660c',
-    contrastText: '#fff',
+    main: "#ED6C02",
+    light: "#FFB547",
+    dark: "#C77700",
+    contrastText: "#fff",
+    containedHover:
+      " linear-gradient(0deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), #ED6C02",
+    outlinedHover: "#ED6C0214",
+    outlinedResting: "#ED6C0280",
   },
   info: {
-    dark: '#0B79D0',
-    main: '#af4c92',
-    light: '#bf70a8',
-    contrastText: '#fff',
+    dark: "#0B79D0",
+    main: "#af4c92",
+    light: "#bf70a8",
+    contrastText: "#fff",
+    containedHover:
+      "linear-gradient(0deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), #2196F3",
+    outlinedHover: "#2196F314",
+    outlinedResting: "#2196F380",
   },
   success: {
-    main: '#77c043',
-    light: '#77c043',
-    dark: '#61a331',
-    contrastText: '#fff',
+    main: "#4CAF50",
+    light: "#7BC67E",
+    dark: "#3B873E",
+    contrastText: "#fff",
+    containedHover:
+      " linear-gradient(0deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), #4CAF50;",
+    outlinedHover: "#4CAF5014",
+    outlinedResting: "#4CAF5080",
   },
   text: {
-    primary: '#262626',
-    secondary: '#525252',
-    disabled: '#969696',
-    hint: '#6848c4',
+    primary: "#000000DE",
+    secondary: "#00000099",
+    disabled: "#00000061",
+    hint: "#6848c4",
   },
-  divider: 'rgba(0, 0, 0, 0.20)',
+  divider: "rgba(0, 0, 0, 0.12)",
   background: {
-    default: '#fff',
-    paper: '#f6f6fa',
+    default: "#fff",
+    paper: "#f6f6fa",
     A100: {
-      main: '#f9fafc',
-      hilight: '#e8f2f9',
+      main: "#f9fafc",
+      hilight: "#e8f2f9",
     },
-    A200: { main: '#f1f4f9' },
+    A200: { main: "#f1f4f9" },
     A600: {
-      main: '#495671',
-      hilight: '#6aadd9',
+      main: "#495671",
+      hilight: "#6aadd9",
     },
-    A700: { main: '#133854' },
+    A700: { main: "#133854" },
   },
-}
+};
 
 const SHAPE = {
   borderRadius: 4, // from default
   radius: {
-    small: '2px',
-    normal: '4px',
-    larger: '6px',
-    large: '8px',
+    small: "2px",
+    normal: "4px",
+    larger: "6px",
+    large: "8px",
   },
-}
+};
 
 const EXT = {
   // :aa TO MOVE to layout object. (post sass cleanup)
   spacing: SPACING_BASE,
   // :aa TO REMOVE. (post sass cleanup)
   maxContainerWidth: MAX_CONTAINER_WIDTH,
-}
+};
 
 const MIXINS = {
   toolbar: {
@@ -108,79 +132,79 @@ const MIXINS = {
   },
 
   menuButton: {
-    display: 'block',
-    color: 'inherit',
+    display: "block",
+    color: "inherit",
 
-    '&.button-variant-text': {
-      borderRadius: '0px',
+    "&.button-variant-text": {
+      borderRadius: "0px",
       // marginBottom: '8px',
       paddingBottom: 0,
 
-      '&:hover': {
-        backgroundColor: 'inherit',
+      "&:hover": {
+        backgroundColor: "inherit",
       },
-      '& > .MuiButton-label': {},
+      "& > .MuiButton-label": {},
     },
 
-    '&.button-variant-contained': {
+    "&.button-variant-contained": {
       // marginBottom: '5px',
-      paddingLeft: '12px',
-      paddingRight: '12px',
+      paddingLeft: "12px",
+      paddingRight: "12px",
       color: PALETTE.common.white,
-      '&:hover': {
+      "&:hover": {
         color: PALETTE.text.secondary,
       },
     },
 
-    '&.link-button': {
-      display: 'flex',
-      flexDirection: 'row',
-      justifyContent: 'center',
-      '&:hover': {
-        textDecoration: 'none',
-        '& *': {
-          textDecoration: 'inherit',
+    "&.link-button": {
+      display: "flex",
+      flexDirection: "row",
+      justifyContent: "center",
+      "&:hover": {
+        textDecoration: "none",
+        "& *": {
+          textDecoration: "inherit",
         },
       },
     },
 
-    paddingLeft: '6px',
-    paddingRight: '6px',
+    paddingLeft: "6px",
+    paddingRight: "6px",
     marginRight: SPACING_BASE,
-    '&:last-child': {
+    "&:last-child": {
       marginRight: 0,
     },
-    minWidth: '80px',
+    minWidth: "80px",
 
-    '& .MuiButton-endIcon': {
-      marginLeft: '1.5px',
+    "& .MuiButton-endIcon": {
+      marginLeft: "1.5px",
     },
-    '& .MuiSvgIcon-root': {
-      marginRight: '-3px',
-      transition: '0.5s transform ease',
+    "& .MuiSvgIcon-root": {
+      marginRight: "-3px",
+      transition: "0.5s transform ease",
     },
 
-    '&.selected': {
-      '& .MuiSvgIcon-root': {
-        transform: 'rotate(180deg)',
+    "&.selected": {
+      "& .MuiSvgIcon-root": {
+        transform: "rotate(180deg)",
       },
     },
   },
 
   menuButtonLabel: {
-    width: 'auto',
-    textTransform: 'capitalize',
-    display: 'flex',
-    flexDirection: 'row',
-    alignItems: 'flex-end',
-    '.button-variant-text &': {
-      borderBottom: '3.5px transparent solid',
-      '&:hover': {
+    width: "auto",
+    textTransform: "capitalize",
+    display: "flex",
+    flexDirection: "row",
+    alignItems: "flex-end",
+    ".button-variant-text &": {
+      borderBottom: "3.5px transparent solid",
+      "&:hover": {
         borderBottom: `3.5px ${PALETTE.primary.main} solid`,
       },
     },
   },
-}
+};
 
 export default {
   breakpoints: BREAKPOINTS,
@@ -188,65 +212,65 @@ export default {
   spacing: SPACING_BASE,
 
   palette: {
-    mode: 'light' as PaletteMode,
+    mode: "light" as PaletteMode,
     ...PALETTE,
   },
 
   typography: {
-    fontFamily: 'Roboto, sans-serif',
+    fontFamily: "Roboto, sans-serif",
     htmlFontSize: 10,
     h1: {
-      fontSize: '9.6rem',
+      fontSize: "9.6rem",
       marginTop: 0,
     },
     h2: {
-      fontSize: '6rem',
+      fontSize: "6rem",
       marginTop: 0,
     },
     h3: {
-      fontSize: '4.8rem',
+      fontSize: "4.8rem",
       marginTop: 0,
     },
     h4: {
-      fontSize: '3.4rem',
+      fontSize: "3.4rem",
       marginTop: 0,
     },
     h5: {
-      fontSize: '2.4rem',
+      fontSize: "2.4rem",
       marginTop: 0,
     },
     h6: {
-      fontSize: '2rem',
+      fontSize: "2rem",
       fontWeight: 500,
       marginTop: 0,
     },
     body1: {
-      fontSize: '1.6rem',
+      fontSize: "1.6rem",
       fontWeight: 400,
     },
     body2: {
-      fontSize: '1.4rem',
+      fontSize: "1.4rem",
       fontWeight: 400,
     },
     subtitle1: {
-      fontSize: '1.6rem',
+      fontSize: "1.6rem",
       fontWeight: 400,
       lineHeight: 1.5,
     },
     subtitle2: {
-      fontSize: '1.4rem',
+      fontSize: "1.4rem",
       fontWeight: 400,
       lineHeight: 1.5,
     },
     subtitle3: {
-      fontSize: '1.6rem',
+      fontSize: "1.6rem",
       fontWeight: 400,
-      lineHeight: '1.5',
+      lineHeight: "1.5",
     },
     subtitle3Bold: {
-      fontSize: '1.6rem',
+      fontSize: "1.6rem",
       fontWeight: 700,
-      lineHeight: '1.5',
+      lineHeight: "1.5",
     },
   },
 
@@ -256,33 +280,57 @@ export default {
   components: {
     MuiCssBaseline: {
       styleOverrides: {
-        '*, *::before, *::after': {
-          boxSizing: 'border-box',
+        "*, *::before, *::after": {
+          boxSizing: "border-box",
         },
 
         body: {
-          fontSize: '1.4rem',
+          fontSize: "1.4rem",
         },
       },
     },
 
     // MuiButtonBase: {
     //   defaultProps: {
-    //     disableRipple: true
+    //     disableRipple: true,
     //   },
     //   styleOverrides: {
     //     root: {
-    //       fontSize: '1.4rem',
-    //       lineHeight: '1.71',
-    //       minWidth: '0 !important',
+    //       fontSize: "1.4rem",
+    //       lineHeight: "1.71",
+    //       minWidth: "0 !important",
     //     },
-    //   }
+    //   },
     // },
 
     MuiButton: {
       styleOverrides: {
-        root: {
-          minWidth: '0 !important',
+        root: ({ ownerState, theme }: any) => {
+          const color = PALETTE[ownerState?.color];
+          if (color) {
+            if (ownerState.variant === "contained") {
+              return {
+                "&:hover": {
+                  backgroundColor: color.containedHover,
+                },
+              };
+            } else if (ownerState.variant === "outlined") {
+              return {
+                "&:hover": {
+                  backgroundColor: color.outlinedHover,
+                },
+              };
+            }
+          }
+        },
+        sizeSmall: {
+          fontSize: "0.8125rem",
+        },
+        sizeMedium: {
+          fontSize: "0.875rem",
+        },
+        sizeLarge: {
+          fontSize: "0.9375rem",
         },
       },
     },
@@ -290,7 +338,7 @@ export default {
     MuiFormLabel: {
       styleOverrides: {
         root: {
-          fontSize: '1.6rem',
+          fontSize: "1.6rem",
         },
       },
     },
@@ -304,7 +352,7 @@ export default {
     MuiTableCell: {
       styleOverrides: {
         root: {
-          fontSize: '1.4rem',
+          fontSize: "1.4rem",
         },
       },
     },
@@ -312,18 +360,18 @@ export default {
     MuiAppBar: {
       styleOverrides: {
         root: {
-          backgroundColor: 'transparent',
+          backgroundColor: "transparent",
           color: PALETTE.text.primary,
-          zIndex: 'initial',
-          boxShadow: 'none',
-          borderBottom: '0.5px solid #ccc',
+          zIndex: "initial",
+          boxShadow: "none",
+          borderBottom: "0.5px solid #ccc",
         },
       },
     },
     MuiDialogActions: {
       styleOverrides: {
         root: {
-          padding: '0 20px 20px',
+          padding: "0 20px 20px",
         },
       },
     },
@@ -331,10 +379,10 @@ export default {
     MuiCard: {
       styleOverrides: {
         root: {
-          backgroundColor: '#ffffff',
+          backgroundColor: "#ffffff",
           borderRadius: 0,
-          boxShadow: 'none',
-          padding: '3.2rem',
+          boxShadow: "none",
+          padding: "3.2rem",
         },
       },
     },
@@ -342,7 +390,7 @@ export default {
     MuiListSubheader: {
       styleOverrides: {
         root: {
-          fontSize: '1.6rem',
+          fontSize: "1.6rem",
         },
       },
     },
@@ -352,12 +400,12 @@ export default {
         standardSuccess: {
           backgroundColor: PALETTE.success.main,
           color: PALETTE.common.white,
-          '& .MuiAlert-icon': {
+          "& .MuiAlert-icon": {
             color: PALETTE.common.white,
           },
         },
         standardInfo: {
-          '& .MuiAlert-icon': {
+          "& .MuiAlert-icon": {
             color: PALETTE.info.main,
           },
         },
@@ -374,10 +422,10 @@ export default {
     // ration is x / y
     // https://stackoverflow.com/questions/1495407/maintain-the-aspect-ratio-of-a-div-with-css
     backgroundImage: `url("${url}")`,
-    boxSizing: 'border-box',
-    width: '100%',
+    boxSizing: "border-box",
+    width: "100%",
     paddingBottom: `${100 / ratio}%`,
-    backgroundSize: 'cover',
+    backgroundSize: "cover",
   }),
 
   layout: {
@@ -399,4 +447,4 @@ export default {
       width: 300,
     },
   },
-}
+};

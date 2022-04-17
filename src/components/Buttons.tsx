@@ -74,9 +74,6 @@ const Buttons = () => {
           </RadioGroup>
         </FormControl>{" "}
       </div>
-      {/* <Button size="small" color={color} sx={{ m: 1 }} variant={value}>
-        Click me
-      </Button> */}
       <Button size="small" color={color} sx={{ m: 1 }} variant={value}>
         SMALL
       </Button>
@@ -86,10 +83,7 @@ const Buttons = () => {
       <Button size="large" color={color} sx={{ m: 1 }} variant={value}>
         LARGE
       </Button>
-      {/* <div style={{ marginTop: "10px" }}>
-        <Button size="small" color={color} sx={{ m: 1 }} variant={value}>
-          Click me <ArrowForwardIcon sx={{ fontSize: "1.7rem" }} />
-        </Button>
+      <div style={{ marginTop: "10px" }}>
         <Button size="small" color={color} sx={{ m: 1 }} variant={value}>
           Click me <ArrowForwardIcon sx={{ fontSize: "1.7rem" }} />
         </Button>
@@ -104,9 +98,6 @@ const Buttons = () => {
         <Button size="small" color={color} sx={{ m: 1 }} variant={value}>
           <ArrowBackIcon sx={{ fontSize: "1.7rem" }} /> Click me
         </Button>
-        <Button size="small" color={color} sx={{ m: 1 }} variant={value}>
-          <ArrowBackIcon sx={{ fontSize: "1.7rem" }} /> Click me
-        </Button>
         <Button size="medium" color={color} sx={{ m: 1 }} variant={value}>
           <ArrowBackIcon sx={{ fontSize: "1.7rem" }} /> Click me
         </Button>
@@ -115,15 +106,6 @@ const Buttons = () => {
         </Button>
       </div>
       <div style={{ marginTop: "10px" }}>
-        <Button
-          disabled
-          size="small"
-          color={color}
-          sx={{ m: 1 }}
-          variant={value}
-        >
-          Click me
-        </Button>
         <Button
           disabled
           size="small"
@@ -150,8 +132,8 @@ const Buttons = () => {
           variant={value}
         >
           Click me
-        </Button> */}
-      {/* </div> */}
+        </Button>
+      </div>
     </div>
   );
 };
