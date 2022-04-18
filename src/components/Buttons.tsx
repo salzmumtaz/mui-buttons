@@ -1,5 +1,5 @@
 import React from "react";
-import { Avatar, Button, Box, Grid, Typography } from "@mui/material";
+import { Switch, Button, Checkbox, FormGroup, Typography } from "@mui/material";
 import Radio from "@mui/material/Radio";
 import RadioGroup from "@mui/material/RadioGroup";
 import FormControlLabel from "@mui/material/FormControlLabel";
@@ -10,7 +10,7 @@ import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 
 const Buttons = () => {
   const [value, setValue] = React.useState<any>("outlined");
-  const [color, setColor] = React.useState<any>("primary");
+  const [color, setColor] = React.useState<any>("success");
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setValue((event.target as HTMLInputElement).value);
@@ -18,6 +18,7 @@ const Buttons = () => {
   const handleColor = (event: React.ChangeEvent<HTMLInputElement>) => {
     setColor((event.target as HTMLInputElement).value);
   };
+
   return (
     <div>
       <FormControl sx={{ marginTop: "10px" }}>
@@ -40,7 +41,10 @@ const Buttons = () => {
           />
         </RadioGroup>
       </FormControl>{" "}
-      <div style={{ marginBottom: "30px" }}>
+      <div>
+        <Typography variant="h5" mt="20px">
+          Radio buttons
+        </Typography>
         <FormControl>
           <RadioGroup
             row
@@ -70,10 +74,143 @@ const Buttons = () => {
               control={<Radio />}
               label="Warning"
             />
+            <FormControlLabel value="info" control={<Radio />} label="Info" />
+            <FormControlLabel value="texts" control={<Radio />} label="Text" />
             <FormControlLabel value="error" control={<Radio />} label="Error" />
           </RadioGroup>
         </FormControl>{" "}
       </div>
+      <div style={{ marginBottom: "30px" }}>
+        <FormControl>
+          <RadioGroup
+            row
+            aria-labelledby="demo-row-radio-buttons-group-label"
+            name="controlled-radio-buttons-group"
+            value={color}
+            onChange={handleColor}
+          >
+            <FormControlLabel
+              value="primary"
+              control={<Radio size="medium" color={color} />}
+              label=""
+            />
+
+            <FormControlLabel
+              value="secondary"
+              control={<Radio size="medium" color={color} />}
+              label=""
+            />
+            <FormControlLabel
+              value="success"
+              control={<Radio disabled color={color} />}
+              label=""
+            />
+            <FormControlLabel value="warning" control={<Radio />} label="" />
+            <FormControlLabel value="info" control={<Radio />} label="" />
+            <FormControlLabel value="texts" control={<Radio />} label="" />
+            <FormControlLabel value="error" control={<Radio />} label="" />
+          </RadioGroup>
+        </FormControl>{" "}
+      </div>
+      <div style={{ marginBottom: "30px" }}>
+        <FormControl>
+          <RadioGroup
+            row
+            aria-labelledby="demo-row-radio-buttons-group-label"
+            name="controlled-radio-buttons-group"
+            value={color}
+            onChange={handleColor}
+          >
+            <FormControlLabel
+              value="primary"
+              control={<Radio size="small" color={color} />}
+              label="Label"
+            />
+
+            <FormControlLabel
+              value="secondary"
+              control={<Radio size="small" color={color} />}
+              label="Label"
+            />
+            <FormControlLabel
+              value="success"
+              control={<Radio disabled size="small" color={color} />}
+              label="Label"
+            />
+            <FormControlLabel
+              value="warning"
+              control={<Radio size="small" />}
+              label="Label"
+            />
+            <FormControlLabel
+              value="info"
+              control={<Radio size="small" />}
+              label="Label"
+            />
+            <FormControlLabel
+              value="texts"
+              control={<Radio size="small" />}
+              label="Label"
+            />
+            <FormControlLabel
+              value="error"
+              control={<Radio size="small" />}
+              label="Label"
+            />
+          </RadioGroup>
+        </FormControl>{" "}
+      </div>
+      <div style={{ marginBottom: "30px" }}>
+        <FormControl>
+          <RadioGroup
+            row
+            aria-labelledby="demo-row-radio-buttons-group-label"
+            name="controlled-radio-buttons-group"
+            value={color}
+            onChange={handleColor}
+          >
+            <FormControlLabel
+              value="primary"
+              control={<Radio size="small" color={color} />}
+              label=""
+            />
+
+            <FormControlLabel
+              value="secondary"
+              control={<Radio size="small" color={color} />}
+              label=""
+            />
+            <FormControlLabel
+              value="success"
+              control={<Radio disabled size="small" color={color} />}
+              label=""
+            />
+            <FormControlLabel
+              value="warning"
+              control={<Radio size="small" />}
+              label=""
+            />
+            <FormControlLabel
+              value="info"
+              control={<Radio size="small" />}
+              label=""
+            />
+            <FormControlLabel
+              value="texts"
+              control={<Radio size="small" />}
+              label=""
+            />
+            <FormControlLabel
+              value="error"
+              control={<Radio size="small" />}
+              label=""
+            />
+          </RadioGroup>
+        </FormControl>{" "}
+      </div>
+      <Typography variant="h5" mt="20px">
+        Buttons
+      </Typography>
       <Button size="small" color={color} sx={{ m: 1 }} variant={value}>
         SMALL
       </Button>
@@ -85,24 +222,24 @@ const Buttons = () => {
       </Button>
       <div style={{ marginTop: "10px" }}>
         <Button size="small" color={color} sx={{ m: 1 }} variant={value}>
-          Click me <ArrowForwardIcon sx={{ fontSize: "1.7rem" }} />
+          small <ArrowForwardIcon sx={{ fontSize: "1.7rem" }} />
         </Button>
         <Button size="medium" color={color} sx={{ m: 1 }} variant={value}>
-          Click me <ArrowForwardIcon sx={{ fontSize: "1.7rem" }} />
+          Medium <ArrowForwardIcon sx={{ fontSize: "1.7rem" }} />
         </Button>
         <Button size="large" color={color} sx={{ m: 1 }} variant={value}>
-          Click me <ArrowForwardIcon sx={{ fontSize: "1.7rem" }} />
+          Large <ArrowForwardIcon sx={{ fontSize: "1.7rem" }} />
         </Button>
       </div>
       <div style={{ marginTop: "10px" }}>
         <Button size="small" color={color} sx={{ m: 1 }} variant={value}>
-          <ArrowBackIcon sx={{ fontSize: "1.7rem" }} /> Click me
+          <ArrowBackIcon sx={{ fontSize: "1.7rem" }} /> small
         </Button>
         <Button size="medium" color={color} sx={{ m: 1 }} variant={value}>
-          <ArrowBackIcon sx={{ fontSize: "1.7rem" }} /> Click me
+          <ArrowBackIcon sx={{ fontSize: "1.7rem" }} /> Medium
         </Button>
         <Button size="large" color={color} sx={{ m: 1 }} variant={value}>
-          <ArrowBackIcon sx={{ fontSize: "1.7rem" }} /> Click me
+          <ArrowBackIcon sx={{ fontSize: "1.7rem" }} /> Large
         </Button>
       </div>
       <div style={{ marginTop: "10px" }}>
@@ -133,6 +270,134 @@ const Buttons = () => {
         >
           Click me
         </Button>
+      </div>
+      <Typography variant="h5" mt="20px">
+        Checkbox
+      </Typography>
+      <div>
+        <FormControlLabel
+          control={<Checkbox color={color} disabled size="medium" />}
+          label="Label"
+        />
+        <FormControlLabel
+          control={
+            <Checkbox color={color} defaultChecked disabled size="medium" />
+          }
+          label="Label"
+        />
+        <FormControlLabel
+          control={<Checkbox color={color} size="medium" />}
+          label="Label"
+        />
+        <FormControlLabel
+          control={<Checkbox color={color} defaultChecked size="medium" />}
+          label="Label"
+        />
+        <FormControlLabel
+          control={<Checkbox color={color} indeterminate size="medium" />}
+          label="Label"
+        />
+      </div>
+      <div style={{ marginTop: "10px" }}>
+        <FormControlLabel
+          control={<Checkbox color={color} disabled size="medium" />}
+          label="Label"
+        />
+        <FormControlLabel
+          control={
+            <Checkbox color={color} defaultChecked disabled size="medium" />
+          }
+          label=""
+        />
+        <FormControlLabel
+          control={<Checkbox color={color} size="medium" />}
+          label=""
+        />
+        <FormControlLabel
+          control={<Checkbox color={color} defaultChecked size="medium" />}
+          label=""
+        />
+        <FormControlLabel
+          control={<Checkbox color={color} indeterminate size="medium" />}
+          label=""
+        />
+      </div>
+      <div>
+        <FormControlLabel
+          control={<Checkbox color={color} disabled size="small" />}
+          label="Label"
+        />
+        <FormControlLabel
+          control={
+            <Checkbox color={color} defaultChecked disabled size="small" />
+          }
+          label="Label"
+        />
+        <FormControlLabel
+          control={<Checkbox color={color} size="small" />}
+          label="Label"
+        />
+        <FormControlLabel
+          control={<Checkbox color={color} defaultChecked size="small" />}
+          label="Label"
+        />
+        <FormControlLabel
+          control={<Checkbox color={color} indeterminate size="medium" />}
+          label="Label"
+        />
+      </div>
+      <div style={{ marginTop: "10px" }}>
+        <FormControlLabel
+          control={<Checkbox color={color} disabled size="small" />}
+          label="Label"
+        />
+        <FormControlLabel
+          control={
+            <Checkbox color={color} defaultChecked disabled size="small" />
+          }
+          label=""
+        />
+        <FormControlLabel
+          control={<Checkbox color={color} size="small" />}
+          label=""
+        />
+        <FormControlLabel
+          control={<Checkbox color={color} defaultChecked size="small" />}
+          label=""
+        />
+        <FormControlLabel
+          control={<Checkbox color={color} indeterminate size="small" />}
+          label=""
+        />
+      </div>
+      <div style={{ marginLeft: "180px", marginTop: "40px" }}>
+        <Typography variant="h5" mt="20px">
+          Switch
+        </Typography>
+        <FormGroup>
+          <FormControlLabel
+            control={<Switch defaultChecked color={color} />}
+            label="Label"
+          />
+          <FormControlLabel
+            control={<Switch defaultChecked color={color} />}
+            label=""
+          />
+          <FormControlLabel disabled control={<Switch />} label="Disabled" />
+          <FormControlLabel
+            control={<Switch size="small" defaultChecked color={color} />}
+            label="Label"
+          />
+          <FormControlLabel
+            control={<Switch size="small" defaultChecked color={color} />}
+            label=""
+          />
+          <FormControlLabel
+            disabled
+            control={<Switch size="small" />}
+            label="Disabled"
+          />
+        </FormGroup>
       </div>
     </div>
   );
