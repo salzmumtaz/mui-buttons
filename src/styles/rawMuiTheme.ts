@@ -342,6 +342,13 @@ export default {
         },
       },
     },
+    MuiFormControlLabel: {
+      styleOverrides: {
+        label: {
+          fontSize: "1rem",
+        },
+      },
+    },
 
     MuiContainer: {
       defaultProps: {
@@ -372,6 +379,49 @@ export default {
       styleOverrides: {
         root: {
           padding: "0 20px 20px",
+        },
+      },
+    },
+    MuiRadio: {
+      styleOverrides: {
+        root: ({ ownerState }: any) => {
+          if (ownerState.size === "small") {
+            return {
+              "& .MuiSvgIcon-root": {
+                height: "1.042rem",
+                width: "1.042rem",
+              },
+            };
+          } else if (ownerState.size === "medium") {
+            return {
+              "& .MuiSvgIcon-root": {
+                height: "1.25rem",
+                width: "1.25rem",
+              },
+            };
+          }
+        },
+      },
+    },
+
+    MuiCheckbox: {
+      styleOverrides: {
+        root: ({ ownerState }: any) => {
+          if (ownerState.size === "small") {
+            return {
+              "& .MuiSvgIcon-root": {
+                height: "0.938rem",
+                width: "0.938rem",
+              },
+            };
+          } else if (ownerState.size === "medium") {
+            return {
+              "& .MuiSvgIcon-root": {
+                height: "1.125rem",
+                width: "1.125rem",
+              },
+            };
+          }
         },
       },
     },
