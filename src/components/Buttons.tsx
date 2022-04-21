@@ -1,5 +1,5 @@
 import React from "react";
-import { Switch, Button, Checkbox, FormGroup, Typography } from "@mui/material";
+import { Switch, Button, ButtonGroup, Typography } from "@mui/material";
 import Radio from "@mui/material/Radio";
 import RadioGroup from "@mui/material/RadioGroup";
 import FormControlLabel from "@mui/material/FormControlLabel";
@@ -7,6 +7,7 @@ import FormControl from "@mui/material/FormControl";
 import FormLabel from "@mui/material/FormLabel";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
+import SplitButton from "./SplitButton";
 
 const Buttons = () => {
   const [value, setValue] = React.useState<any>("outlined");
@@ -39,6 +40,7 @@ const Buttons = () => {
             control={<Radio />}
             label="Outlined"
           />
+          <FormControlLabel value="text" control={<Radio />} label="Text" />
         </RadioGroup>
       </FormControl>{" "}
       <div>
@@ -139,6 +141,102 @@ const Buttons = () => {
         >
           Click me
         </Button>
+      </div>
+      <div style={{ marginTop: "25px" }}>
+        <ButtonGroup
+          color={color}
+          variant={value}
+          size="small"
+          aria-label="outlined primary button group"
+        >
+          <Button>One</Button>
+          <Button>Two</Button>
+          <Button>Three</Button>
+        </ButtonGroup>
+      </div>
+      <div style={{ marginTop: "15px" }}>
+        <ButtonGroup
+          color={color}
+          variant={value}
+          size="medium"
+          aria-label="outlined primary button group"
+        >
+          <Button>One</Button>
+          <Button>Two</Button>
+          <Button>Three</Button>
+        </ButtonGroup>
+      </div>
+      <div style={{ marginTop: "15px" }}>
+        <ButtonGroup
+          color={color}
+          variant={value}
+          size="large"
+          aria-label="outlined primary button group"
+        >
+          <Button>One</Button>
+          <Button>Two</Button>
+          <Button>Three</Button>
+        </ButtonGroup>
+        <div style={{ marginTop: "25px" }}>
+          <div style={{ marginTop: "15px" }}>
+            <SplitButton
+              value={value}
+              size="small"
+              color={color}
+              selectIndex={0}
+            />
+            <SplitButton
+              value={value}
+              size="medium"
+              color={color}
+              selectIndex={1}
+            />
+            <SplitButton
+              value={value}
+              size="large"
+              color={color}
+              selectIndex={2}
+            />
+          </div>
+        </div>
+      </div>
+      <div style={{ marginTop: "25px" }}>
+        <ButtonGroup
+          sx={{ m: 1 }}
+          orientation="vertical"
+          color={color}
+          variant={value}
+          size="small"
+          aria-label="outlined primary button group"
+        >
+          <Button>One</Button>
+          <Button>Two</Button>
+          <Button>Three</Button>
+        </ButtonGroup>
+        <ButtonGroup
+          sx={{ m: 1 }}
+          orientation="vertical"
+          color={color}
+          variant={value}
+          size="medium"
+          aria-label="outlined primary button group"
+        >
+          <Button>One</Button>
+          <Button>Two</Button>
+          <Button>Three</Button>
+        </ButtonGroup>
+        <ButtonGroup
+          sx={{ m: 1 }}
+          orientation="vertical"
+          color={color}
+          variant={value}
+          size="large"
+          aria-label="outlined primary button group"
+        >
+          <Button>One</Button>
+          <Button>Two</Button>
+          <Button>Three</Button>
+        </ButtonGroup>
       </div>
     </div>
   );

@@ -88,7 +88,7 @@ const CheckBox = () => {
       <div style={{ marginTop: "10px" }}>
         <FormControlLabel
           control={<Checkbox color={color} disabled size="medium" />}
-          label="Label"
+          label=""
         />
         <FormControlLabel
           control={
@@ -136,7 +136,7 @@ const CheckBox = () => {
       <div style={{ marginTop: "10px" }}>
         <FormControlLabel
           control={<Checkbox color={color} disabled size="small" />}
-          label="Label"
+          label=""
         />
         <FormControlLabel
           control={

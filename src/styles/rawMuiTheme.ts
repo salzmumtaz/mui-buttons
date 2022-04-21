@@ -68,7 +68,7 @@ const PALETTE: {
   },
   info: {
     dark: "#0B79D0",
-    main: "#af4c92",
+    main: "#2196F3",
     light: "#bf70a8",
     contrastText: "#fff",
     containedHover:
@@ -310,6 +310,9 @@ export default {
           if (color) {
             if (ownerState.variant === "contained") {
               return {
+                "& split-button ": {
+                  color: "red",
+                },
                 "&:hover": {
                   backgroundColor: color.containedHover,
                 },
@@ -330,7 +333,7 @@ export default {
           fontSize: "0.875rem",
         },
         sizeLarge: {
-          fontSize: "0.9375rem",
+          fontSize: ".9375rem",
         },
       },
     },
@@ -422,6 +425,30 @@ export default {
               },
             };
           }
+        },
+      },
+    },
+
+    MuiToggleButton: {
+      styleOverrides: {
+        root: {
+          border: "none",
+          "& .MuiSvgIcon-root": {
+            height: "1.125rem",
+            width: "1.125rem",
+          },
+        },
+        sizeSmall: {
+          height: "2.5rem",
+          width: "2.5rem",
+        },
+        sizeMedium: {
+          height: "3rem",
+          width: "3rem",
+        },
+        sizeLarge: {
+          height: "3.5rem",
+          width: "3.5rem",
         },
       },
     },

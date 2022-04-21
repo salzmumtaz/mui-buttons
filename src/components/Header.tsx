@@ -13,7 +13,15 @@ import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
 import { Link } from "react-router-dom";
 
-const pages = ["button", "radiobuttons", "switch", "checkbox"];
+const pages = [
+  "button",
+  "radiobuttons",
+  "switch",
+  "checkbox",
+  "slider",
+  "rating",
+  "toggle",
+];
 
 const Header = () => {
   const [anchorElNav, setAnchorElNav] =
